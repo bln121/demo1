@@ -44,9 +44,9 @@ def check_credentials(username, password):
     c = conn.cursor()
 
     c.execute('SELECT password FROM users WHERE username = ?', (username))
-    pass = c.fetchall()
+    pas = c.fetchall()
 
-    if password in pass:
+    if password in pas:
         # Verify the password
         #if bcrypt.checkpw(password.encode("utf-8"), user[2]):
         st.success("Login successful!")
