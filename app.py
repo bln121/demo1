@@ -77,7 +77,13 @@ session_state = st.session_state
 if not session_state.get("logged_in"):
     st.title("Welcome to My App")
     create_database()
-    signup_page()
+    choice = st.radio("Choose an action:", ("Signup", "Login"))
+
+    if choice == "Signup":
+        signup_page()
+    elif choice == "Login":
+        login_page()
+    #signup_page()
     #login_page()
 else:
     st.title("Dashboard")
