@@ -40,20 +40,18 @@ def save_credentials(username, password):
 
 def check_credentials(username, password):
     # Retrieve the user data from the database
-    c.execute('SELECT * FROM users WHERE username = ?', (username,))
+    pass=c.execute('SELECT password FROM users WHERE username = ?', (username))
     user = c.fetchone()
 
-    if user:
+    if password==pass:
         # Verify the password
-        if bcrypt.checkpw(password.encode("utf-8"), user[2]):
-            st.success("Login successful!")
+        #if bcrypt.checkpw(password.encode("utf-8"), user[2]):
+        st.success("Login successful!")
             # Set a session token or identifier
             # You can use Streamlit's SessionState module or another method of your choice
             # to store the session state and authenticate subsequent requests
-        else:
-            st.error("Incorrect password. Please try again.")
     else:
-        st.error("User not found. Please sign up first.")
+        st.error("Incorrect password. Please try again.")
 
 def signup_page():
     st.header("Sign Up")
