@@ -40,10 +40,13 @@ def save_credentials(username, password):
 
 def check_credentials(username, password):
     # Retrieve the user data from the database
-    pass=c.execute('SELECT password FROM users WHERE username = ?', (username))
-    user = c.fetchone()
+    conn = sqlite3.connect('customers.db')
+    c = conn.cursor()
 
-    if password==pass:
+    c.execute('SELECT password FROM users WHERE username = ?', (username))
+    pass = c.fetchall()
+
+    if password in pass:
         # Verify the password
         #if bcrypt.checkpw(password.encode("utf-8"), user[2]):
         st.success("Login successful!")
