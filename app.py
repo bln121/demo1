@@ -16,6 +16,15 @@ def create_database():
         conn.commit()
     conn.close()
 
+def view_customers():
+    conn = sqlite3.connect('users1.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM users1")
+    users1 = c.fetchall()
+    conn.close()
+    st.write(users1)
+   # return customers
+
 
 def save_credentials(username, password):
     # Hash the password
@@ -75,5 +84,5 @@ else:
     # Add your main application code here
 
 # Close the database connection when the Streamlit app is stopped
-conn.close()
+#conn.close()
 
