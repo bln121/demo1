@@ -20,7 +20,7 @@ def create_database():
 def save_credentials(username, password):
     # Hash the password
     hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-    conn = sqlite3.connect('customers.db')
+    conn = sqlite3.connect('users.db')
     c = conn.cursor()
     # Insert user data into the database
     c.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
