@@ -20,7 +20,7 @@ def view_customers():
     conn = sqlite3.connect('users1.db')
     c = conn.cursor()
     c.execute("SELECT * FROM users")
-    users1 = c.fetchall()
+    users = c.fetchall()
     conn.close()
     st.write(users)
    # return customers
