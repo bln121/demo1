@@ -5,14 +5,14 @@ import bcrypt
 # Connect to the SQLite database
 
 def create_database():    
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('users1.db')
     c = conn.cursor()
     c.execute("""
     SELECT name FROM sqlite_master WHERE type='table' AND name='users'
     """)
     if not c.fetchone():
         c.execute('''CREATE TABLE users
-                     (name text, password text)''')
+                     (username text, password text)''')
         conn.commit()
     conn.close()
 
@@ -20,7 +20,7 @@ def create_database():
 def save_credentials(username, password):
     # Hash the password
     #hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('users1.db')
     c = conn.cursor()
     # Insert user data into the database
     c.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
