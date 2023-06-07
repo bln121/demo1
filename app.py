@@ -36,6 +36,7 @@ def save_credentials(username, password):
     conn.commit()
 
     st.success("Signup successful! Please proceed to login.")
+    view_customers()
 
 def check_credentials(username, password):
     # Retrieve the user data from the database
