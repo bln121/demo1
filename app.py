@@ -1,8 +1,13 @@
 import streamlit as st
 import sqlite3
 import bcrypt
+import urllib.request
 
 # Connect to the SQLite database
+
+url = 'https://raw.githubusercontent.com/bln121/demo1/main/database.db'
+urllib.request.urlretrieve(url, 'users1.db')
+
 
 def create_database():    
     conn = sqlite3.connect('users1.db')
