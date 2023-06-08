@@ -40,7 +40,7 @@ def save_credentials(username, password):
 
 def check_credentials(username, password):
     # Retrieve the user data from the database
-    conn = sqlite3.connect('customers.db')
+    conn = sqlite3.connect('users1.db')
     c = conn.cursor()
 
     c.execute('SELECT password FROM users WHERE username = ?', (username))
