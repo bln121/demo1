@@ -47,15 +47,11 @@ def check_credentials(uname, password):
     pas = c.fetchone()
     st.write(pas)
 
-    if password in pas:
-        # Verify the password
-        #if bcrypt.checkpw(password.encode("utf-8"), user[2]):
-        st.success("Login successful!")
-            # Set a session token or identifier
-            # You can use Streamlit's SessionState module or another method of your choice
-            # to store the session state and authenticate subsequent requests
-    else:
-        st.error("Incorrect password. Please try again.")
+    if pas:
+        db_pass=pas[0]
+        if db_pass==password:
+            st.success("Login successful")
+        
 
 def signup_page():
     st.header("Sign Up")
