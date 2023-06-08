@@ -43,7 +43,7 @@ def check_credentials(uname, password):
     conn = sqlite3.connect('users1.db')
     c = conn.cursor()
 
-    c.execute('SELECT * FROM users WHERE username = ?', (uname))
+    c.execute('SELECT password FROM users WHERE username = ?', (uname))
     pas = c.fetchone()
     st.write(pas)
 
