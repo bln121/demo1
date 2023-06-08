@@ -38,12 +38,12 @@ def save_credentials(username, password):
     st.success("Signup successful! Please proceed to login.")
     view_customers()
 
-def check_credentials(username, password):
+def check_credentials(uname, password):
     # Retrieve the user data from the database
     conn = sqlite3.connect('users1.db')
     c = conn.cursor()
 
-    c.execute('SELECT password FROM users WHERE username = ?', (username))
+    c.execute('SELECT password FROM users WHERE username = ?', (uname))
     pas = c.fetchall()
 
     if password in pas:
