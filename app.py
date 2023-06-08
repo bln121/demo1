@@ -44,7 +44,7 @@ def check_credentials(uname, password):
     c = conn.cursor()
 
     c.execute('SELECT * FROM users WHERE username = ?', (uname))
-    pas = c.fetchnone()
+    pas = c.fetchone()
     st.write(pas)
 
     if password in pas:
