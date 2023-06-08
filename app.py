@@ -43,8 +43,9 @@ def check_credentials(uname, password):
     conn = sqlite3.connect('users1.db')
     c = conn.cursor()
 
-    c.execute('SELECT password FROM users WHERE username = ?', (uname))
-    pas = c.fetchall()
+    c.execute('SELECT * FROM users WHERE username = ?', (uname))
+    pas = c.fetchnone()
+    st.write(pas)
 
     if password in pas:
         # Verify the password
