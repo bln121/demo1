@@ -12,7 +12,7 @@ def create_database():
     """)
     if not c.fetchone():
         c.execute('''CREATE TABLE users
-                     (username text, password text)''')
+                     (username text primary key, password text)''')
         conn.commit()
     conn.close()
 
