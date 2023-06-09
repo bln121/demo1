@@ -5,7 +5,7 @@ import urllib.request
 
 # Connect to the SQLite database
 
-url = 'https://raw.githubusercontent.com/bln121/demo1/users1.db'
+url = 'https://raw.githubusercontent.com/bln121/demo1/main/users1.db'
 urllib.request.urlretrieve(url, 'users1.db')
 
 
