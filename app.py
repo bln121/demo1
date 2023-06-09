@@ -22,7 +22,7 @@ def create_database():
     conn.close()
 
 def view_customers():
-    conn = sqlite3.connect('users1.db')
+    conn = sqlite3.connect('users1.db');
     c = conn.cursor()
     c.execute("SELECT * FROM users")
     users = c.fetchall()
