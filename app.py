@@ -32,8 +32,7 @@ def view_customers():
 
 
 def save_credentials(username, password):
-    # Hash the password
-    #hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+   
     conn = sqlite3.connect('users1.db')
     c = conn.cursor()
     # Insert user data into the database
