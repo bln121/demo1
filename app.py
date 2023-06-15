@@ -34,23 +34,6 @@ from tensorflow.keras.layers import Dense, Dropout, LSTM
 import base64
 from IPython.display import HTML
 
-
-def login_page():
-    st.header("Login")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username == "Narayana" and password == "123":
-            st.write("Login sucessful")
-            prediction()
-            
-login_page() 
- 
-    
-    
-    
-
-
 def prediction():
     START="2010-01-01"
     TODAY=date.today().strftime("%Y-%m-%d")
@@ -422,4 +405,25 @@ def prediction():
     st.subheader("Prediction of future data")
 
     st.write(HTML(future_data.to_html(escape=False)))
+
+
+
+
+def login_page():
+    st.header("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username == "Narayana" and password == "123":
+            st.write("Login sucessful")
+            prediction()
+            
+login_page() 
+ 
+    
+    
+    
+
+
+
 
