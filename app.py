@@ -10,7 +10,7 @@ def login_page():
     password = st.text_input("Password", type="password")
     if st.button("Login"):
         if username == "Narayana" and password == 2706:
-            print("Login sucessful")
+            st.write("Login sucessful")
 login_page() 
  
     
