@@ -34,6 +34,9 @@ from tensorflow.keras.layers import Dense, Dropout, LSTM
 import base64
 from IPython.display import HTML
 
+
+from datetime import datetime
+
 def prediction():
     START="2010-01-01"
     TODAY=date.today().strftime("%Y-%m-%d")
@@ -392,7 +395,7 @@ def prediction():
 
     #Converting string format date into date  and below is the code to insert the date in future_data dataframe
 
-    from datetime import datetime
+    
 
 
     date_str=future_data['Date'].iloc[0]
