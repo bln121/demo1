@@ -9,7 +9,7 @@ def login_page():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     
-  
-
+login_page() 
+ 
     
 
