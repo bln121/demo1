@@ -419,11 +419,9 @@ def login_page():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
-         predefined_credentials = {
+        predefined_credentials = {
         "Narayana": "123",
         "Ram": "Ram"}
-      
-    
         if username in predefined_credentials and password == predefined_credentials[username]:
             st.write("Login sucessful")
             prediction()
