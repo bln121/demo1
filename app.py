@@ -424,7 +424,7 @@ def login_page():
         "Ram": "Ram"}
       
     
-        if username in predefined_credentials and password == predefined_credentials[username]::
+        if username in predefined_credentials and password == predefined_credentials[username]:
             st.write("Login sucessful")
             prediction()
         else:
