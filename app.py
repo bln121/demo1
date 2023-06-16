@@ -112,7 +112,8 @@ def prediction():
     #code 2 to print next day's close value
 
 
-
+    from datetime import datetime
+    
     ticker = selected_stock
     period1 = int(time.mktime(datetime.datetime(2021, 4, 1, 23, 59).timetuple()))#year,month,day
     period2= int(time.mktime(datetime.datetime.now().timetuple()))
