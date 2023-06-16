@@ -421,6 +421,9 @@ def login_page():
     if st.button("Login"):
         if username == "Narayana" and password == "123":
             st.write("Login sucessful")
+        else:
+            st.write("Enter valid username or password to login")
+         
             prediction()
             
 login_page() 
