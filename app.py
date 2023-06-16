@@ -35,7 +35,7 @@ import base64
 from IPython.display import HTML
 
 
-from datetime import datetime
+
 
 def prediction():
     START="2010-01-01"
@@ -397,7 +397,8 @@ def prediction():
 
     
 
-
+    from datetime import datetime
+    
     date_str=future_data['Date'].iloc[0]
     tomorrow = datetime.strptime(date_str, '%Y-%m-%d').date() + timedelta(1)
     future_data['Date'].iloc[1] = tomorrow
